@@ -19,16 +19,16 @@ class Photos:
 
     '''Getting date info from filename.'''
     def getDate(self):
-        import re
-        j = re.match('^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})',
-                     re.match('(\d+)-(\d+)-(\d+)-(\d).jpg', self.filename)
-                     .group(2))
-        self.year = j.group(1)
-        self.month = j.group(2)
-        self.date = j.group(3)
-        self.hour = j.group(4)
-        self.minute = j.group(5)
-        self.second = j.group(6)
+        import re,os,time
+
+        '''get epoctime of file mtime, and convert struct_time of localtime.'''
+        t = time.localtime(os.path.getmtime(self.filename))
+        self.year = t.tm_year
+        self.mon = t.tm_mon
+        self.mday = t.tm_mday
+        self.hour = t.tm_hour
+        self.min = t.tm_min
+        self.sec = t.tm_sec
 
     '''Serialize JSON Document.'''
     def encodeJson(self):
@@ -36,13 +36,15 @@ class Photos:
             "filename":self.filename,
             "image":self.image_base64,
             "year":self.year,
-            "month":self.month,
-            "date":self.date,
+            "mon":self.mon,
+            "mday":self.mday,
             "hour":self.hour,
-            "minute":self.minute,
-            "second":self.second
+            "min":self.min,
+            "sec":self.sec
             }
 
+        '''serializing JSON'''
+        
 
 
 n = Photos()
