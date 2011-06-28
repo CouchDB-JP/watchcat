@@ -59,16 +59,16 @@ class JSONEncoderForCouchDB:
 
     '''Getting date info from filename.'''
     def getDate(self):
-        import re,os,time
-
-        '''get epoctime of file mtime, and convert struct_time of localtime.'''
-        t = time.localtime(os.path.getmtime(self.filename))
-        self.year = t.tm_year
-        self.mon = t.tm_mon
-        self.mday = t.tm_mday
-        self.hour = t.tm_hour
-        self.min = t.tm_min
-        self.sec = t.tm_sec
+        import re
+        t = re.match('^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})',
+                     re.match('(\d+)-(\d+)-(\d+)-(\d).jpg', self.filename)
+                     .group(2))
+        self.year = t.group(1)
+        self.mon = t.group(2)
+        self.mday = t.group(3)
+        self.hour = t.group(4)
+        self.min = t.group(5)
+        self.sec = t.group(6)
 
 
     '''generate dict as document.'''
