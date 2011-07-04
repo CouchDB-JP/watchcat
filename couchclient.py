@@ -9,13 +9,27 @@ class JSONEncoderForCouchDB:
         self.docs = []
         for self.filename in glob.glob("*-??????????????-??-?.jpg"):
             if os.path.isfile(self.filename):
+
+                # encoding original photo file in base64.
                 self.image_base64 = self.encodeBase64(self.filename)
+                
+                # getting photo timestamp.
                 self.getDate()
+
+                # generating thumbnail from original photo.
                 self.generateThumbnail()
+
+                # encoding thumbnail photo file in base64.
                 self.thumbnail_base64 = self.encodeBase64(self.thumbnail_name)
                 #self.thumbnail_base64 = self.encodeBase64_hoge(self.hoge)
+
+                # generating dictionary object.
                 self.generateDict()
+                
+                # append doc of photo to dictionary object as all_doc.
                 self.docs.append(self.doc)
+
+        # generate json as bulk_docs for CouchDB.
         self.serializedJson()
 
 
