@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-class Photos:
+class JSONEncoderForCouchDB:
+
     '''getting bulk_docs of Listing photo images taken with motion.'''
     def getBulkDocsOfPhotos(self):
         import glob, os.path
@@ -17,13 +18,6 @@ class Photos:
                 self.docs.append(self.doc)
         self.serializedJson()
 
-
-    def serializedJson(self):
-        import json
-        self.bulk_docs = json.JSONEncoder().encode({
-                "all_or_nothing":"true",
-                "docs":self.docs
-                })
 
     '''Encoding photo image file to base64 ascii strings.'''
     def encodeBase64(self, image):
@@ -86,10 +80,16 @@ class Photos:
             }
 
 
-    '''serializing JSON'''
-    
+    '''Serializing JSON for bulk_docs.'''
+    def serializedJson(self):
+        import json
+        self.bulk_docs = json.JSONEncoder().encode({
+                "all_or_nothing":"true",
+                "docs":self.docs
+                })
 
 
-n = Photos()
+
+n = JSONEncoderForCouchDB()
 n.getBulkDocsOfPhotos()
 print n.bulk_docs
