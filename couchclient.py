@@ -37,7 +37,7 @@ class Photos:
 
     '''Generating thumbnail.'''
     def generateThumbnail(self):
-        import Image, os, types
+        import Image, os
         '''
         self.thumbnail = Image.open(self.filename,mode='r')
         self.hoge = str(self.thumbnail.thumbnail([60,60]))
