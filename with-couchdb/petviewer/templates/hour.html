@@ -13,14 +13,13 @@
 	<h1>サムネイル</h1>
       </div>
       <div data-role="content">
-	<ul data-role="listview">
           {{#datalist}}
-          <p>{{year}}年{{mon}}月{{mday}}日{{hour}}時{{min}}分{{sec}}秒</p> 
-	  <p>サムネイル名{{thumbnail}}</p>
-	  <p><img src="/watchcat-staging/{{_id}}/{{thumbnail}}"/></p>
-	  </li>
+	  <span>
+	    <a href="/watchcat-staging/{{_id}}/{{photo}}" rel="external">
+	      <img src="/watchcat-staging/{{_id}}/{{thumbnail}}"
+		   alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}"/></a>
+	  </span>
           {{/datalist}}
-        </ul>
       </div>
       <div data-role="footer" data-position="fixed">
       </div>

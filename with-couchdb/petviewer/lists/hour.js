@@ -10,6 +10,7 @@ function (head, req) {
 	datalist.push({
 	    _id: row.value._id,
 	    thumbnail: row.value.thumbnail,
+	    photo: row.value.photo,
 	    year: row.value.year,
 	    mon: row.value.mon,
 	    mday: row.value.mday,
