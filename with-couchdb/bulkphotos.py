@@ -80,6 +80,8 @@ class JSONEncoderForCouchDB:
             "hour":self.hour,
             "min":self.min,
             "sec":self.sec,
+            "photo":self.filename,
+            "thumbnail":self.thumbnail_name,
             "_attachments":{
                 self.filename:
                     {
