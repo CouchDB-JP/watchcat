@@ -1,40 +1,14 @@
 watchcat
 ---------------------------
-Post photos taken by motion(*), and delete photos from Picasa.
+Post photos taken by motion(*).
 "watchcat" is the name that is I monitor for my pet cat.
 
  * http://motion.sf.net
  
+Upload to Picasa Version:
+   Read with-picasa/README.
 
-INSTALL:
+Upload to CouchDB Version:
+   Read with-couchdb/README.
 
-1. Install Debian package googlecl, motion.
-   $ sudo apt-get install googlecl motion
-
-2. Setting motion
-   $ sudo vi /etc/default/motion
-   --
-   -start_motion_daemon=no
-   +start_motion_daemon=yes
-   --
-
-   $ sudo vi /etc/motion/motion.conf
-   --
-   -daemon off
-   +daemon on
-   -setup_mode off
-   +setup_mode on
-   -snapshot_interval 0
-   +snapshot_interval 1800
-   -; text_left CAMERA %t
-   +text_left CAMERA %t
-   -target_dir /tmp/motion
-   +target_dir /var/local/motion
-
-3. register crontab entry.
-   $ crontab -e
-   --
-   3-59/15 * * * * ~/postphoto.sh
-   8-59/15 * * * * ~/deletephoto.sh
-
- -- Kouhei Maeda <mkouhei at palmtb.net>, Mon, 25 Apr 2011 22:04:15 +0900
+ -- Kouhei Maeda <mkouhei at palmtb.net>, Wed, 06 Jul 2011 19:12:15 +0900
