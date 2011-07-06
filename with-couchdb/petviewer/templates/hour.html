@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/watchcat-staging/_design/petviewer/jquery.mobile-1.0b1.min.css" />
+    <script type="text/javascript" src="/watchcat-staging/_design/petviewer/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="/watchcat-staging/_design/petviewer/jquery.mobile-1.0b1.min.js"></script>
+    <title>サムネイル</title>
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header" data-position="fixed">
+	<h1>サムネイル</h1>
+      </div>
+      <div data-role="content">
+	<ul data-role="listview">
+          {{#datalist}}
+          <p>{{year}}年{{mon}}月{{mday}}日{{hour}}時{{min}}分{{sec}}秒</p> 
+	  <p>サムネイル名{{thumbnail}}</p>
+	  <p><img src="/watchcat-staging/{{_id}}/{{thumbnail}}"/></p>
+	  </li>
+          {{/datalist}}
+        </ul>
+      </div>
+      <div data-role="footer" data-position="fixed">
+      </div>
+    </div>
+  </body>
+</html>

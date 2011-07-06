@@ -2,3 +2,6 @@
 *~
 *.swp
 \#*\#
+.couchapprc
+*.min.*
+with-couchdb/petviewer/_attachments/images
