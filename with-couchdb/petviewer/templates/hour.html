@@ -2,21 +2,23 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link type="text/css" rel="stylesheet" href="/watchcat-staging/_design/petviewer/jquery.mobile-1.0b1.min.css" />
-    <script type="text/javascript" src="/watchcat-staging/_design/petviewer/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="/watchcat-staging/_design/petviewer/jquery.mobile-1.0b1.min.js"></script>
-    <title>サムネイル</title>
+    <link type="text/css" rel="stylesheet" href="../../jquery.mobile-1.0b1.min.css" />
+    <script type="text/javascript" src="../../jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="../../jquery.mobile-1.0b1.min.js"></script>
+    {{#datalist}}
+    <title>{{hour}}時の様子</title>
   </head>
   <body>
     <div data-role="page">
       <div data-role="header" data-position="fixed">
-	<h1>サムネイル</h1>
+	<h1>{{hour}}時の様子</h1>
+	{{/datalist}}
       </div>
       <div data-role="content">
           {{#datalist}}
 	  <span>
-	    <a href="/watchcat-staging/{{_id}}/{{photo}}" rel="external">
-	      <img src="/watchcat-staging/{{_id}}/{{thumbnail}}"
+	    <a href="../../../../{{_id}}/{{photo}}" data-ajax="false">
+	      <img id="thumbnail" src="../../../../{{_id}}/{{thumbnail}}"
 		   alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}"/></a>
 	  </span>
           {{/datalist}}

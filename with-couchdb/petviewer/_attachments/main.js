@@ -1,6 +1,5 @@
 $(function() {
-   
-    // function
+    
     function Dates() {
 	this.dtNow = new Date();
 	this.dtMon = this.dtNow.getMonth() + 1;
@@ -20,7 +19,7 @@ $(function() {
     if ($("ul#today")) {
 	while (Dates.dtHour >= 0) {
 	    $("ul#today")
-		.append('<li><a href="/watchcat-staging/_design/petviewer/_list/hour/mday?key=' + Dates.dtHour + '">' + Dates.dtHour + '時</a></li>');
+		.append('<li><a href="_list/hour/mday?key=' + Dates.dtHour + '" data-ajax="false">' + Dates.dtHour + '時</a></li>');
 	    --Dates.dtHour;
 	}
     }
