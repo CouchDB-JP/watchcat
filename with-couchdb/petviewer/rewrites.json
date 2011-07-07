@@ -1,0 +1,26 @@
+[
+    {
+	"from":"",
+	"to":"index.html"
+    },
+    {
+	"from":"js/*",
+	"to":"js/*"
+    },
+    {
+	"from":"style/*",
+	"to":"style/*"
+    },
+    {
+	"from":"images/*",
+	"to":"images/*"
+    },
+    {
+	"from":"_view/*",
+	"to":"_view/*"
+    },
+    {
+	"from":"_list/*",
+	"to":"_list/*"
+    }
+]

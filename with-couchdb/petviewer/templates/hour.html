@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <link type="text/css" rel="stylesheet" href="../../jquery.mobile-1.0b1.min.css" />
-    <script type="text/javascript" src="../../jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="../../jquery.mobile-1.0b1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../style/jquery.mobile-1.0b1.min.css" />
+    <script type="text/javascript" src="../../js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.mobile-1.0b1.min.js"></script>
     {{#datalist}}
     <title>{{hour}}時の様子</title>
   </head>
@@ -17,7 +17,7 @@
       <div data-role="content">
           {{#datalist}}
 	  <span>
-	    <a href="../../../../{{_id}}/{{photo}}" data-ajax="false">
+	    <a href="../../../../{{_id}}/{{photo}}">
 	      <img id="thumbnail" src="../../../../{{_id}}/{{thumbnail}}"
 		   alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}"/></a>
 	  </span>
