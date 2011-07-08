@@ -5,21 +5,19 @@
     <link type="text/css" rel="stylesheet" href="../../style/jquery.mobile-1.0b1.min.css" />
     <script type="text/javascript" src="../../js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.mobile-1.0b1.min.js"></script>
-    <title>{{hour}}時の様子</title>
+    <title>リスト</title>
   </head>
   <body>
     <div data-role="page">
       <div data-role="header" data-position="fixed">
-	<h1>{{hour}}時の様子</h1>
+	<h1>リスト</h1>
       </div>
       <div data-role="content">
+	<ul data-role="listview">
           {{#datalist}}
-	  <span>
-	    <a href="../../../../{{_id}}/{{photo}}" data-ajax="false">
-	      <img id="thumbnail" src="../../../../{{_id}}/{{thumbnail}}"
-		   alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}"/></a>
-	  </span>
+	  <li><a href="../hour/thumbnail?key=%22{{year}}{{mon}}{{mday}}{{hour}}%22">{{mon}}/{{mday}} {{hour}}時</a><span class="ui-li-count">{{num}}</span></li>
           {{/datalist}}
+	</ul>
       </div>
       <div data-role="footer" data-position="fixed">
       </div>
