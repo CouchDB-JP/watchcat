@@ -5,19 +5,17 @@
     <link type="text/css" rel="stylesheet" href="../../style/jquery.mobile-1.0b1.min.css" />
     <script type="text/javascript" src="../../js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.mobile-1.0b1.min.js"></script>
-    <title>時間別に確認</title>
+    <title>{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}</title>
   </head>
   <body>
     <div data-role="page" data-add-back-btn="true">
       <div data-role="header" data-position="fixed">
-	<h1>時間別に確認</h1>
+	<h1>{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}</h1>
       </div>
       <div data-role="content">
-	<ul data-role="listview">
-          {{#datalist}}
-	  <li><a href="../hour/thumbnail?key=%22{{year}}{{mon}}{{mday}}{{hour}}%22">{{mon}}/{{mday}} {{hour}}時</a><span class="ui-li-count">{{num}}</span></li>
-          {{/datalist}}
-	</ul>
+	<a href="javascript:void(0)" onclick="history.back(); return false;" data-ajax="false">
+	  <img id="photo" src="../../../../{{_id}}/{{photo}}"
+	       alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}の写真"/></a>
       </div>
       <div data-role="footer" data-position="fixed">
       </div>

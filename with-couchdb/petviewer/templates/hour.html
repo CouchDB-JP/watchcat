@@ -5,17 +5,17 @@
     <link type="text/css" rel="stylesheet" href="../../style/jquery.mobile-1.0b1.min.css" />
     <script type="text/javascript" src="../../js/jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.mobile-1.0b1.min.js"></script>
-    <title>{{hour}}時の様子</title>
+    <title>{{hour}}時 : プレビューリスト</title>
   </head>
   <body>
     <div data-role="page" data-add-back-btn="true">
       <div data-role="header" data-position="fixed">
-	<h1>{{hour}}時の様子</h1>
+	<h1>{{hour}}時 : プレビューリスト</h1>
       </div>
       <div data-role="content">
           {{#datalist}}
 	  <span>
-	    <a href="../../../../{{_id}}/{{photo}}" data-ajax="false">
+	    <a href="../../_show/photo/{{_id}}">
 	      <img id="thumbnail" src="../../../../{{_id}}/{{thumbnail}}"
 		   alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}"/></a>
 	  </span>
