@@ -19,6 +19,6 @@ function (head, req) {
 	    sec: row.value.sec
 	});
     }
-    var data = {"datalist":datalist};
+    var data = {"datalist":datalist,"hour":datalist[0].hour};
     return mustache.to_html(this.templates.hour, data);
 }
