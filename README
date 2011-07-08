@@ -13,7 +13,7 @@ If you Upload to CouchDB, Read with-couchdb/README.
 Installing Motion:
 
 1. Install Debian package motion.
-   $ sudo apt-get install googlecl motion
+   $ sudo apt-get install motion.
 
 2. Setting motion
    $ sudo vi /etc/default/motion

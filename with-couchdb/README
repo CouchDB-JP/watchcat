@@ -4,6 +4,9 @@ Post photos taken by motion(*) to, and delete photos from CouchDB
 "watchcat" is the name that is I monitor for my pet cat.
 
  * http://motion.sf.net
+
+1. Install Debian package curl, couchapp.
+   $ sudo apt-get install curl couchapp
  
 1. Deploy petviewr with couchapp.
    $ cd petviewer
