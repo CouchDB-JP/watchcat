@@ -1,0 +1,31 @@
+with-couchdb is photo uploader to CouchDB.
+------------------------------------------
+Post photos taken by motion(*) to, and delete photos from CouchDB
+"watchcat" is the name that is I monitor for my pet cat.
+
+ * http://motion.sf.net
+ 
+1. Deploy petviewr with couchapp.
+   $ cd petviewer
+   $ sensible-editor .couchapprc
+   $ couchapp push
+
+2. edit uploader/upload.sh.
+   edit following settings.
+   
+---
+PHOTODIR="/var/local/motion"
+SCRIPTPATH="/path/to/watchcat/with-couchdb/uploader/bulkphotos.py"
+USER="username"
+PASS="password"
+HOSTNAME="example.org"
+PORT=5984
+DB="dbname"
+---
+
+3. register crontab entry.
+   $ crontab -e
+   --
+   3-59/15 * * * * ~/upload.sh
+
+ -- Kouhei Maeda <mkouhei at palmtb.net>, Sat, 9 Jul 2011 01:56:15 +0900

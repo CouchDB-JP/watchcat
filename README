@@ -4,11 +4,35 @@ Post photos taken by motion(*).
 "watchcat" is the name that is I monitor for my pet cat.
 
  * http://motion.sf.net
- 
-Upload to Picasa Version:
-   Read with-picasa/README.
 
-Upload to CouchDB Version:
-   Read with-couchdb/README.
+If you upload to Picasa,  Read with-picasa/README.
 
- -- Kouhei Maeda <mkouhei at palmtb.net>, Wed, 06 Jul 2011 19:12:15 +0900
+If you Upload to CouchDB, Read with-couchdb/README.
+
+
+Installing Motion:
+
+1. Install Debian package motion.
+   $ sudo apt-get install googlecl motion
+
+2. Setting motion
+   $ sudo vi /etc/default/motion
+   --
+   -start_motion_daemon=no
+   +start_motion_daemon=yes
+   --
+
+   $ sudo vi /etc/motion/motion.conf
+   --
+   -daemon off
+   +daemon on
+   -setup_mode off
+   +setup_mode on
+   -snapshot_interval 0
+   +snapshot_interval 1800
+   -; text_left CAMERA %t
+   +text_left CAMERA %t
+   -target_dir /tmp/motion
+   +target_dir /var/local/motion
+
+ -- Kouhei Maeda <mkouhei at palmtb.net>, Sat, 09 Jul 2011 01:55:15 +0900
