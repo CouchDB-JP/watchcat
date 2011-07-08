@@ -30,6 +30,12 @@ class JSONEncoderForCouchDB:
                 # append doc of photo to dictionary object as all_doc.
                 self.docs.append(self.doc)
 
+                # generating Date info object
+                self.generateDate()
+                
+                # append doc of date to dictionary object as all_doc.
+                self.docs.append(self.date)
+
         # generate json as bulk_docs for CouchDB.
         self.serializedJson()
 
@@ -74,6 +80,7 @@ class JSONEncoderForCouchDB:
     '''generate dict as document.'''
     def generateDict(self):
         self.doc = {
+            "type":"photo",
             "year":self.year,
             "mon":self.mon,
             "mday":self.mday,
@@ -94,6 +101,16 @@ class JSONEncoderForCouchDB:
                     "data":self.thumbnail_base64
                     }
                 }
+            }
+
+    '''generate dict as document.'''
+    def generateDate(self):
+        self.date = {
+            "type":"date",
+            "year":self.year,
+            "mon":self.mon,
+            "mday":self.mday,
+            "hour":self.hour
             }
 
 
