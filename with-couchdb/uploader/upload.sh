@@ -1,14 +1,35 @@
 #!/bin/sh
 
 PHOTODIR="/path/to/motion"
-SCRIPTPATH="with-couchdb/uploader/bulkphotos.py"
+SCRIPTPATH="/path/to/with-couchdb/uploader/bulkphotos.py"
 USER="user"
 PASS="password"
 HOSTNAME="example.org"
 PORT=5984
 DB="dbname"
+JSON=$(tempfile)
 
 cd $PHOTODIR
 
-curl -X POST -H 'Content-Type:application/json' -d "`$SCRIPTPATH`" \
-    http://${USER}:${PASS}@${HOSTNAME}:${PORT}/${DB}/_bulk_docs
+$SCRIPTPATH > $JSON
+
+case $PORT in
+    80 )
+	curl -X POST -H 'Content-Type:application/json' -d @${JSON} \
+	    http://${USER}:${PASS}@${HOSTNAME}/${DB}/_bulk_docs
+	;;
+    443 )
+	curl -X POST -H 'Content-Type:application/json' -d @${JSON} \
+	    https://${USER}:${PASS}@${HOSTNAME}/${DB}/_bulk_docs
+	;;
+    6984 )
+	curl -X POST -H 'Content-Type:application/json' -d @${JSON} \
+	    https://${USER}:${PASS}@${HOSTNAME}:${PORT}/${DB}/_bulk_docs
+	;;
+    * )
+	curl -X POST -H 'Content-Type:application/json' -d @${JSON} \
+	    http://${USER}:${PASS}@${HOSTNAME}:${PORT}/${DB}/_bulk_docs
+	;;
+esac
+
+rm -f $JSON *.jpg *.swf
