@@ -1,6 +1,5 @@
 function(doc) {
-
-    if(doc.type == "photo") {
+    if(doc.photo) {
 	    emit(doc.year + doc.mon + doc.mday + doc.hour, doc);
     };
 }
