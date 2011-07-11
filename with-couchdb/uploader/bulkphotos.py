@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 class JSONEncoderForCouchDB:
 
     '''getting bulk_docs of Listing photo images taken with motion.'''
@@ -29,6 +30,10 @@ class JSONEncoderForCouchDB:
                 
                 # append doc of photo to dictionary object as all_doc.
                 self.docs.append(self.doc)
+                
+                # remove jpg files.
+                os.remove(self.filename)
+                os.remove(self.thumbnail_name)
 
         # generate json as bulk_docs for CouchDB.
         self.serializedJson()
