@@ -1,10 +1,23 @@
 $(function() {
 
-    var key = "2011062223";
-    var uri = "https://nekozanmai.net/watchcat-staging/_design/petviewer/_view/thumbnail?key=%22" + key + "%22";
-    var keyid = "9afc600e507552f39914ef315c001d21";
-    
-    $.getJSON(uri, 
+    function getSearchKey() {
+	return $('input#searchkey').val();
+    }
+
+    function basename(path) {
+	return path.replace(/\\/g,'/').replace( /.*\//, '' );
+    }
+
+    function getDocId () {
+	return basename(window.location.pathname);
+    }
+
+    function getJsonUri() {
+	return "../../_view/thumbnail?key=%22" + getSearchKey() + "%22";
+    }
+
+
+    $.getJSON(getJsonUri(),
 	      function(data) {
 
 		  var id = [];
@@ -49,15 +62,21 @@ $(function() {
 		  // search previd, nextid by id.
 		  for (var i = 0; i < idlist.length; i++) {
 
-		      if (idlist[i][0] == keyid) {
-			  $('a#prev').attr('href', idlist[i][1]); // previous id button
-			  $('a#next').attr('href', idlist[i][2]); // next id button
+		      if (idlist[i][0] == getDocId()) {
+			  if (idlist[i][1]) {
+			      $('a#prev').attr('href', idlist[i][1]); // previous id button
+			  } else {
+			      $('a#prev').remove();
+			  }
+			  if (idlist[i][2]) {
+			      $('a#next').attr('href', idlist[i][2]); // next id button
+			  } else {
+			      $('a#next').remove();
+			  }
 		      }
 		  }
-				  
+
 	      });
-
-
 
 });
 
