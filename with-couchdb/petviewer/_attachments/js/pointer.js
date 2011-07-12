@@ -73,6 +73,7 @@ $(function() {
 			  }
 			  if (idlist[i][2]) {
 			      $('a#next').attr('href', idlist[i][2]); // next id button
+			      $('a#photo').attr('href', idlist[i][2]); // next id button
 			  } else {
 			      $('a#next').remove();
 			  }
