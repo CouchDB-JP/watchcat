@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link type="text/css" rel="stylesheet" href="../../style/jquery.mobile-1.0b1.min.css" />
     <script type="text/javascript" src="../../js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="../../js/matchpath.js"></script>
     <script type="text/javascript" src="../../js/jquery.mobile-1.0b1.min.js"></script>
     <title>時間別に確認</title>
   </head>
@@ -16,12 +17,12 @@
       <div data-role="content">
 	<ul data-role="listview">
           {{#datalist}}
-	  <li><a href="../hour/thumbnail?key=%22{{year}}{{mon}}{{mday}}{{hour}}%22">{{mon}}/{{mday}} {{hour}}時</a><span class="ui-li-count">{{num}}</span></li>
+	  <li><a href="../hour/thumbnail?key=%22{{year}}{{mon}}{{mday}}{{hour}}%22" data-ajax="false">{{mon}}/{{mday}} {{hour}}時</a><span class="ui-li-count">{{num}}</span></li>
           {{/datalist}}
 	</ul>
       </div>
       <div data-role="footer" data-position="fixed">
-	<a href="../../index.html" data-role="button" data-icon="home" data-ajax="false">ホーム</a>
+	<a id="home" data-role="button" data-icon="home" data-ajax="false">ホーム</a>
       </div>
     </div>
   </body>
