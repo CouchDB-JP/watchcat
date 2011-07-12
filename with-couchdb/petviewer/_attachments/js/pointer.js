@@ -16,6 +16,9 @@ $(function() {
 	return "../../_view/thumbnail?key=%22" + getSearchKey() + "%22";
     }
 
+    function getThumbnailListUri() {
+	return "../../_list/hour/thumbnail?key=%22" + getSearchKey() + "%22";
+    }
 
     $.getJSON(getJsonUri(),
 	      function(data) {
@@ -77,6 +80,9 @@ $(function() {
 		  }
 
 	      });
+
+    // back button thumbnail list view.
+    $('a#gotothumbnail').attr('href', getThumbnailListUri());
 
 });
 
