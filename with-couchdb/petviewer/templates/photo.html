@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <link type="text/css" rel="stylesheet" href="../../style/jquery.mobile-1.0b1.min.css" />
     <script type="text/javascript" src="../../js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="../../js/pointer.js"></script>
     <script type="text/javascript" src="../../js/jquery.mobile-1.0b1.min.js"></script>
     <title>{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}</title>
   </head>
@@ -17,8 +18,13 @@
 	<a href="javascript:void(0)" onclick="history.back(); return false;" data-ajax="false">
 	  <img id="photo" src="../../../../{{_id}}/{{photo}}"
 	       alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}の写真"/></a>
+	<div data-role="controlgroup" data-type="horizontal">
+	  <a id="prev" data-role="button" data-icon="arrow-l" data-ajax="false">前</a>
+	  <a id="next" data-role="button" data-icon="arrow-r" data-ajax="false">次</a>
+	</div>
       </div>
       <div data-role="footer" data-position="fixed">
+
       </div>
     </div>
   </body>
