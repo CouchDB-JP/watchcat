@@ -17,6 +17,7 @@
 """
 import magic
 
+
 def error(msg):
     """Print error message and exit.
 
