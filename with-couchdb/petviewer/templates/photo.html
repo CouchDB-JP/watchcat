@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="../../js/pointer.js"></script>
     <script type="text/javascript" src="../../js/matchpath.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <title>{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}</title>
   </head>
   <body>
@@ -22,15 +22,15 @@
 
 	<a id="photo" data-ajax="false">
 	  <img id="photo" src="../../../../{{_id}}/{{photo}}"
-	       alt="{{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}の写真"/></a>
+	       alt="The photo is taken at {{year}}/{{mon}}/{{mday}} {{hour}}:{{min}}:{{sec}}"/></a>
 	<div data-role="controlgroup" data-type="horizontal">
-	  <a id="prev" data-role="button" data-icon="arrow-l" data-ajax="false">前</a>
-	  <a id="next" data-role="button" data-icon="arrow-r" data-ajax="false">次</a>
+	  <a id="prev" data-role="button" data-icon="arrow-l" data-ajax="false">previous</a>
+	  <a id="next" data-role="button" data-icon="arrow-r" data-ajax="false">next</a>
 	</div>
       </div>
       <div data-role="footer" data-position="fixed">
-	<a id="gotothumbnail" data-role="button" data-icon="arrow-u" data-ajax="false">リストに戻る</a>
-	<a id="home" data-role="button" data-icon="home" data-ajax="false">ホーム</a>
+	<a id="gotothumbnail" data-role="button" data-icon="arrow-u" data-ajax="false">Back to preview list</a>
+	<a id="home" data-role="button" data-icon="home" data-ajax="false">Home</a>
       </div>
     </div>
   </body>

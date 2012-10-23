@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="../../js/matchpath.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-    <title>{{hour}}時 : プレビューリスト</title>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <title>{{hour}} o'clock : preview list</title>
   </head>
   <body>
     <div data-role="page" data-add-back-btn="true">
       <div data-role="header" data-position="fixed">
-	<h1>{{hour}}時 : プレビューリスト</h1>
+	<h1>{{hour}} o'clock :preview list</h1>
       </div>
       <div data-role="content">
           {{#datalist}}
@@ -24,8 +24,8 @@
           {{/datalist}}
       </div>
       <div data-role="footer" data-position="fixed">
-	<a href="../hours/date?group_level=4&descending=true&limit=10" data-role="button" data-icon="arrow-u" data-ajax="false">時間別リストに戻る</a>
-	<a id="home" data-role="button" data-icon="home" data-ajax="false">ホーム</a>
+	<a href="../hours/date?group_level=4&descending=true&limit=10" data-role="button" data-icon="arrow-u" data-ajax="false">Time line</a>
+	<a id="home" data-role="button" data-icon="home" data-ajax="false">Home</a>
       </div>
     </div>
   </body>

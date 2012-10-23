@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="../../js/matchpath.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-    <title>時間別に確認</title>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <title>Time line</title>
   </head>
   <body>
     <div data-role="page" data-add-back-btn="true">
       <div data-role="header" data-position="fixed">
-	<h1>時間別に確認</h1>
+	<h1>Time line</h1>
       </div>
       <div data-role="content">
 	<ul data-role="listview">
           {{#datalist}}
-	  <li><a href="../hour/thumbnail?key=%22{{year}}{{mon}}{{mday}}{{hour}}%22" data-ajax="false">{{mon}}/{{mday}} {{hour}}時</a><span class="ui-li-count">{{num}}</span></li>
+	  <li><a href="../hour/thumbnail?key=%22{{year}}{{mon}}{{mday}}{{hour}}%22" data-ajax="false">{{mon}}/{{mday}} {{hour}} o'clock</a><span class="ui-li-count">{{num}}</span></li>
           {{/datalist}}
 	</ul>
       </div>
       <div data-role="footer" data-position="fixed">
-	<a id="home" data-role="button" data-icon="home" data-ajax="false">ホーム</a>
+	<a id="home" data-role="button" data-icon="home" data-ajax="false">Home</a>
       </div>
     </div>
   </body>

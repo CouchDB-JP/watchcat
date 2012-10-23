@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <title>watchcat - ペット監視システム</title>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <title>watchcat - pet viewer</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.1.1.min.js"></script>
   </head>
   <body>
     <div data-role="page" data-add-back-btn="true">
       <div data-role="header" data-position="fixed">
-	<h1>watchcat - ペット監視システム</h1>
+	<h1>watchcat</h1>
       </div>
       <div data-role="content">
-	<p>ペットをはじめ、家の様子を確認できます。</p>
 	<ul data-role="listview">
-	  <li><a href="_list/hours/date?group_level=4&descending=true&limit=10" data-ajax="false">時系列にサムネイルを確認</a></li>
+	  <li><a href="_list/hours/date?group_level=4&descending=true&limit=10" data-ajax="false">Time line</a></li>
 	</ul>
       </div>
       <div data-role="footer" data-position="fixed">
