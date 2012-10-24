@@ -80,7 +80,8 @@ Change permission of this file that readable and writable by owner only.::
 Run couchyabumi
 ^^^^^^^^^^^^^^^
 
-Register crontab entry.
+Register crontab entry.::
+
    $ crontab -e
    --
    3-59/15 * * * * /usr/bin/couchyabumi
